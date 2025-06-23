@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import profilePic from '@/assets/profile.jpg';
 import { motion } from "framer-motion";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { AnimatedStat } from "@/components/animated-stat";
@@ -37,13 +38,13 @@ export function AboutSection() {
         <div className="grid md:grid-cols-5 gap-12 items-center">
           <MotionWrapper className="md:col-span-2" variants={itemVariants}>
             <div
-              className="relative aspect-square w-4/5 md:w-full mx-auto animate-blob overflow-hidden drop-shadow-accent transition-all duration-300 ease-in-out hover:scale-105 hover:drop-shadow-accent-hover"
+              className="relative aspect-square w-4/5 md:w-full mx-auto animate-blob overflow-hidden drop-shadow-accent transition-all ease-in-out hover:scale-105 hover:drop-shadow-accent-hover"
             >
               <Image
-                src="https://placehold.co/400x400.png"
+                src={profilePic}
                 alt="Developer Portrait"
                 fill
-                className="object-cover"
+                className="object-cover grayscale"
                 data-ai-hint="developer portrait"
               />
             </div>

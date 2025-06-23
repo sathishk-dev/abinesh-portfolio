@@ -59,13 +59,13 @@ export function ContactSection() {
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="relative group">
-                <Input type="text" id="name" name="name" required className="peer h-12 pt-2" placeholder=" " />
+                <Input type="text" id="name" name="name" required className="peer h-12 pt-6" placeholder=" " />
                 <Label htmlFor="name" className="absolute top-3 left-3 text-muted-foreground transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-accent group-[:not(:has([placeholder-shown]))]:top-1 group-[:not(:has([placeholder-shown]))]:text-xs">
                   Name
                 </Label>
               </div>
               <div className="relative group">
-                <Input type="email" id="email" name="email" required className="peer h-12 pt-2" placeholder=" "/>
+                <Input type="email" id="email" name="email" required className="peer h-12 pt-6" placeholder=" "/>
                 <Label htmlFor="email" className="absolute top-3 left-3 text-muted-foreground transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-accent group-[:not(:has([placeholder-shown]))]:top-1 group-[:not(:has([placeholder-shown]))]:text-xs">
                   Email
                 </Label>

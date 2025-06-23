@@ -46,10 +46,10 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-20">
         <Link href="/" passHref>
           <motion.div
-            className="text-2xl font-bold text-foreground"
+            className="text-3xl font-medium font-smooch text-foreground"
             whileHover={{ scale: 1.05 }}
           >
-            Animatefolio
+            Abinesh
           </motion.div>
         </Link>
         <div className="hidden md:flex items-center space-x-2">
@@ -91,7 +91,7 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="flex justify-between items-center pt-4">
-                <span>Toggle Theme</span>
+                <span></span>
                 <ThemeToggle />
               </div>
             </div>

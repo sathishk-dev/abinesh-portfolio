@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Animatefolio | Java Full Stack Developer",
+  title: "Abinesh | Java Full Stack Developer",
   description: "Personal portfolio of a Java Full Stack Developer.",
 };
 
