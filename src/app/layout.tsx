@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { CustomCursor } from "@/components/custom-cursor";
 
 const poppins = Poppins({ 
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <CustomCursor />
           <Navbar />
           <main className="relative overflow-x-hidden">{children}</main>
           <Footer />

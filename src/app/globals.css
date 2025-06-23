@@ -64,4 +64,11 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Hide default cursor on devices with a fine pointer (mice, trackpads) */
+  @media (pointer: fine) {
+    * {
+        cursor: none;
+    }
+  }
 }
