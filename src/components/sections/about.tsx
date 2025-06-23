@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { AnimatedStat } from "@/components/animated-stat";
 import { Separator } from "@/components/ui/separator";

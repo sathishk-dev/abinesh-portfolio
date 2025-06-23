@@ -1,3 +1,5 @@
+"use client";
+
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Timeline } from "@/components/timeline";
 import { Button } from "@/components/ui/button";
