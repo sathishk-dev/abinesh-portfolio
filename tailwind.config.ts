@@ -105,7 +105,7 @@ export default {
         },
       },
       animation: {
-        'blob': 'blob 8s ease-in-out infinite',
+        'blob': 'blob 12s ease-in-out infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
