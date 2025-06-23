@@ -37,7 +37,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-5 gap-12 items-center">
           <MotionWrapper className="md:col-span-2" variants={itemVariants}>
             <div
-              className="relative aspect-square w-4/5 md:w-full mx-auto [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] drop-shadow-accent transition-all duration-300 ease-in-out hover:scale-105 hover:drop-shadow-accent-hover"
+              className="relative aspect-square w-4/5 md:w-full mx-auto [clip-path:polygon(40%_0%,_70%_20%,_100%_40%,_90%_70%,_60%_100%,_30%_90%,_0%_70%,_10%_40%)] drop-shadow-accent transition-all duration-300 ease-in-out hover:scale-105 hover:drop-shadow-accent-hover"
             >
               <Image
                 src="https://placehold.co/400x400.png"
