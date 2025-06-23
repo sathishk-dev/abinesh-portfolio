@@ -29,8 +29,8 @@ const getIcon = (type: TimelineItem["type"]) => {
 
 export function Timeline({ items }: { items: TimelineItem[] }) {
   return (
-    <div className="relative max-w-2xl mx-auto">
-      <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border"></div>
+    <div className="relative max-w-2xl mx-auto md:max-w-4xl">
+      <div className="absolute left-5 md:left-1/2 -translate-x-1/2 h-full w-0.5 bg-border"></div>
       {items.map((item, index) => (
         <motion.div
           key={index}
@@ -40,25 +40,33 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
           viewport={{ once: true, amount: 0.5 }}
           variants={itemVariants}
         >
-          <div className="flex justify-center">
-            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+          <div
+            className={`flex items-center w-full ${
+              index % 2 === 0 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            <div className="absolute left-5 md:left-1/2 -translate-x-1/2 z-10 w-10 h-10 rounded-full bg-accent flex items-center justify-center">
               {getIcon(item.type)}
             </div>
-          </div>
-          <div className={`mt-10 flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
-            <div className={`w-[calc(50%-2.5rem)] ${index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"}`}>
-              <p className="text-muted-foreground text-sm">{item.date}</p>
-            </div>
-          </div>
-          <div className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
-            <div className="w-1/2 p-4">
-              <div className={`relative ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-                 <div className={`absolute top-4 h-0 w-0 border-transparent border-solid ${index % 2 === 0 ? "right-6 border-l-card" : "left-6 border-r-card"}`} style={{ borderWidth: '8px' }}></div>
-                <div className="bg-card p-4 rounded-lg shadow-md">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-sm font-medium text-accent">{item.institution}</p>
-                    <p className="text-sm text-muted-foreground mt-2">{item.description}</p>
-                </div>
+            
+            <div className="w-full md:w-[calc(50%-2.5rem)] ml-14 md:ml-0">
+              <div
+                className={`p-4 rounded-lg shadow-md bg-card relative ${
+                  index % 2 === 0 ? "md:mr-14" : "md:ml-14"
+                }`}
+              >
+                <div
+                  className={`absolute top-4 h-0 w-0 border-transparent border-solid ${
+                    index % 2 === 0
+                      ? "md:border-l-card md:-right-4"
+                      : "md:border-r-card md:-left-4"
+                  } -left-4 border-r-card`}
+                  style={{ borderWidth: "8px" }}
+                ></div>
+                <p className="text-muted-foreground text-sm mb-1">{item.date}</p>
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="text-sm font-medium text-accent">{item.institution}</p>
+                <p className="text-sm text-muted-foreground mt-2">{item.description}</p>
               </div>
             </div>
           </div>

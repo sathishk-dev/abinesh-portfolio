@@ -51,7 +51,7 @@ export function HeroSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground"
           variants={itemVariants}
         >
-          Your Name
+          Abinesh
         </motion.h1>
         <motion.h2 className="mt-2 text-xl md:text-2xl font-medium text-muted-foreground" variants={itemVariants}>
           Java Full Stack Developer | Fresher

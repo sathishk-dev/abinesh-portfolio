@@ -6,46 +6,45 @@ import Link from "next/link";
 
 const socialLinks = [
   {
-    icon: <Github />,
+    icon: <Github size={20} />,
     href: "https://github.com",
     label: "GitHub",
   },
   {
-    icon: <Linkedin />,
+    icon: <Linkedin size={20} />,
     href: "https://linkedin.com",
     label: "LinkedIn",
   },
   {
-    icon: <Mail />,
+    icon: <Mail size={20} />,
     href: "mailto:developer@example.com",
     label: "Email",
   },
 ];
 
+const MotionLink = motion(Link);
+
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground py-8">
-      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-          © {new Date().getFullYear()} Animatefolio. All Rights Reserved.
+      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-sm text-muted-foreground text-center md:text-left">
+          © {new Date().getFullYear()} Abinesh. All Rights Reserved.
         </p>
         <div className="flex space-x-4">
           {socialLinks.map((link) => (
-            <motion.div
+            <MotionLink
               key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              className="p-3 rounded-full bg-primary hover:bg-accent hover:text-accent-foreground transition-colors duration-300 flex items-center justify-center"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Link
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="p-2 rounded-full bg-primary hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
-              >
-                {link.icon}
-              </Link>
-            </motion.div>
+              {link.icon}
+            </MotionLink>
           ))}
         </div>
       </div>
