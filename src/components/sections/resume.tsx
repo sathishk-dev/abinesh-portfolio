@@ -64,7 +64,7 @@ export function ResumeSection() {
                     >
                         <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,hsl(var(--accent))_0%,hsl(var(--primary))_50%,hsl(var(--accent))_100%)]" />
                         
-                        <span className="inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-background px-8 py-3 text-lg font-medium text-foreground backdrop-blur-3xl">
+                        <span className="inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-background px-6 py-2 text-base md:px-8 md:text-lg font-medium text-foreground backdrop-blur-3xl">
                             <motion.span
                                 className="inline-block"
                                 variants={{
