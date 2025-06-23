@@ -54,7 +54,7 @@ export function ContactSection() {
     setTimeout(() => setStatus('idle'), 3000);
   };
 
-  const floatingLabelClasses = "absolute text-sm text-muted-foreground duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-secondary px-2 start-2.5 peer-focus:text-accent peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4";
+  const floatingLabelClasses = "absolute text-sm text-muted-foreground duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 start-2.5 peer-focus:text-accent peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4";
 
   return (
     <section id="contact" className="py-24 bg-secondary">
