@@ -8,7 +8,7 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Loader2, Check, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmailAction } from "@/app/actions";
@@ -67,14 +67,13 @@ export function ContactSection() {
 
         <MotionWrapper>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-xl mx-auto space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-xl mx-auto space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
                       <FormControl>
                         <Input placeholder="Your Name" {...field} />
                       </FormControl>
@@ -87,7 +86,6 @@ export function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input placeholder="your.email@example.com" {...field} />
                       </FormControl>
@@ -101,16 +99,15 @@ export function ContactSection() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Tell me about your project..." className="min-h-[120px]" {...field} />
+                      <Textarea placeholder="Tell me about your project..." className="min-h-[150px]" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <div className="text-center pt-4">
-                <Button type="submit" className="w-40 h-12" disabled={status !== 'idle'}>
+              <div className="text-center">
+                <Button type="submit" size="lg" disabled={status !== 'idle'}>
                   <AnimatePresence mode="wait" initial={false}>
                     {status === 'idle' && (
                       <motion.span
