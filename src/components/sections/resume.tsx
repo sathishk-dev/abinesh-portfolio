@@ -2,7 +2,6 @@
 
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Timeline } from "@/components/timeline";
-import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -51,18 +50,41 @@ export function ResumeSection() {
         </MotionWrapper>
 
         <MotionWrapper variants={slideInVariants}>
-            <div className="text-center mt-12">
-                <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                <Button size="lg" asChild>
-                    <Link href="/resume.pdf" target="_blank" download>
-                        <Download className="mr-2 h-5 w-5" />
-                        Download Resume
-                    </Link>
-                </Button>
-                </motion.div>
+            <div className="mt-12 text-center">
+                <Link href="/resume.pdf" target="_blank" download passHref>
+                    <motion.div
+                        className="relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
+                        initial="rest"
+                        whileHover="hover"
+                        whileTap="tap"
+                        variants={{
+                            hover: { scale: 1.05 },
+                            tap: { scale: 0.95 },
+                        }}
+                    >
+                        <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,hsl(var(--accent))_0%,hsl(var(--primary))_50%,hsl(var(--accent))_100%)]" />
+                        
+                        <span className="inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-background px-8 py-3 text-lg font-medium text-foreground backdrop-blur-3xl">
+                            <motion.span
+                                className="inline-block"
+                                variants={{
+                                    hover: {
+                                        y: [0, 4, 0],
+                                        transition: {
+                                            duration: 1.4,
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
+                                        },
+                                    },
+                                }}
+                            >
+                                <Download className="h-5 w-5" />
+                            </motion.span>
+                            
+                            Download Resume
+                        </span>
+                    </motion.div>
+                </Link>
             </div>
         </MotionWrapper>
       </div>
