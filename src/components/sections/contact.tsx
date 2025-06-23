@@ -11,7 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Loader2, Check, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { sendEmailAction, contactSchema } from "@/app/actions";
+import { sendEmailAction } from "@/app/actions";
+import { contactSchema } from "@/lib/schemas";
 import * as React from 'react';
 
 type FormValues = z.infer<typeof contactSchema>;
