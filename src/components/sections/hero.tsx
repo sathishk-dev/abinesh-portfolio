@@ -5,6 +5,7 @@ import { Typewriter } from "@/components/typewriter";
 import { ScrollIndicator } from "@/components/scroll-indicator";
 import { MagicButton } from "@/components/ui/magic-button";
 import React, { useState, useEffect } from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,6 +27,11 @@ const itemVariants = {
       ease: "easeOut",
     },
   },
+};
+
+const socialItemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0 },
 };
 
 const ParticleBackground = () => {
@@ -99,6 +105,27 @@ const ParticleBackground = () => {
   );
 };
 
+const leftSocials = [
+    {
+      icon: <Github size={24} />,
+      href: "https://github.com",
+      label: "GitHub",
+    },
+    {
+      icon: <Linkedin size={24} />,
+      href: "https://linkedin.com",
+      label: "LinkedIn",
+    },
+];
+  
+const rightSocials = [
+    {
+      icon: <Mail size={24} />,
+      href: "mailto:developer@example.com",
+      label: "Email",
+    },
+];
+
 export function HeroSection() {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden">
@@ -138,6 +165,56 @@ export function HeroSection() {
             Get In Touch
            </MagicButton>
         </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="hidden md:flex flex-col gap-6 absolute left-5 lg:left-10 top-1/2 -translate-y-1/2 z-20"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.2, delayChildren: 1.2 } },
+        }}
+      >
+        {leftSocials.map((social) => (
+          <motion.a
+            key={social.href}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.label}
+            className="p-2 rounded-full text-foreground/70 hover:text-accent hover:bg-accent/10 transition-colors duration-300"
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            variants={socialItemVariants}
+          >
+            {social.icon}
+          </motion.a>
+        ))}
+      </motion.div>
+
+      <motion.div
+        className="hidden md:flex flex-col gap-6 absolute right-5 lg:right-10 top-1/2 -translate-y-1/2 z-20"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.2, delayChildren: 1.2 } },
+        }}
+      >
+        {rightSocials.map((social) => (
+          <motion.a
+            key={social.href}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.label}
+            className="p-2 rounded-full text-foreground/70 hover:text-accent hover:bg-accent/10 transition-colors duration-300"
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            variants={{...socialItemVariants, hidden: { opacity: 0, x: 20 }}}
+          >
+            {social.icon}
+          </motion.a>
+        ))}
       </motion.div>
 
       <ScrollIndicator />
