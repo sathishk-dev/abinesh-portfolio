@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { Label } from "@/components/ui/label";
 import { Loader2, Check, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmailAction } from "@/app/actions";
@@ -53,6 +54,8 @@ export function ContactSection() {
     setTimeout(() => setStatus('idle'), 3000);
   };
 
+  const floatingLabelClasses = "absolute text-sm text-muted-foreground duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-secondary px-2 start-2.5 peer-focus:text-accent peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4";
+
   return (
     <section id="contact" className="py-24 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
@@ -74,9 +77,12 @@ export function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormControl>
-                        <Input placeholder="Your Name" {...field} />
-                      </FormControl>
+                      <div className="relative">
+                        <FormControl>
+                          <Input id={field.name} placeholder=" " {...field} className="peer" />
+                        </FormControl>
+                        <Label htmlFor={field.name} className={floatingLabelClasses}>Your Name</Label>
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -86,9 +92,12 @@ export function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormControl>
-                        <Input placeholder="your.email@example.com" {...field} />
-                      </FormControl>
+                       <div className="relative">
+                        <FormControl>
+                          <Input id={field.name} placeholder=" " {...field} className="peer" />
+                        </FormControl>
+                        <Label htmlFor={field.name} className={floatingLabelClasses}>Your Email</Label>
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -99,9 +108,12 @@ export function ContactSection() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormControl>
-                      <Textarea placeholder="Tell me about your project..." className="min-h-[150px]" {...field} />
-                    </FormControl>
+                    <div className="relative">
+                      <FormControl>
+                        <Textarea id={field.name} placeholder=" " className="peer min-h-[150px] pt-5" {...field} />
+                      </FormControl>
+                      <Label htmlFor={field.name} className={floatingLabelClasses}>Tell me about your project...</Label>
+                    </div>
                     <FormMessage />
                   </FormItem>
                 )}
