@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Typewriter } from "@/components/typewriter";
 import { ScrollIndicator } from "@/components/scroll-indicator";
 import { MagicButton } from "@/components/ui/magic-button";
+import React, { useState, useEffect } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,42 +28,76 @@ const itemVariants = {
   },
 };
 
+const ParticleBackground = () => {
+  const [particles, setParticles] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Generate particles only on the client-side
+    const generateParticles = () => {
+      const newParticles = Array.from({ length: 30 }).map((_, i) => {
+        const size = Math.random() * 15 + 5;
+        const duration = Math.random() * 15 + 10;
+        const delay = Math.random() * duration;
+        const startX = Math.random() * 100;
+        const startY = 110; // Start below the viewport
+        const endY = -10;   // End above the viewport
+
+        return {
+          id: i,
+          size,
+          duration,
+          delay,
+          startX,
+          startY,
+          endY,
+        };
+      });
+      setParticles(newParticles);
+    };
+
+    generateParticles();
+  }, []);
+
+  if (!particles.length) {
+    return <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden bg-background" />;
+  }
+
+  return (
+    <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden bg-background">
+      {particles.map((p) => (
+        <motion.div
+          key={p.id}
+          className="absolute bg-accent/20"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: `${p.startX}%`,
+            top: `${p.startY}%`,
+          }}
+          animate={{
+            y: [`0%`, `${p.endY - p.startY}%`],
+            opacity: [0, 1, 1, 0],
+            borderRadius: ["10%", "50%", "10%"],
+            scale: [1, 1.5, 1],
+          }}
+          transition={{
+            duration: p.duration,
+            delay: p.delay,
+            repeat: Infinity,
+            repeatType: 'loop',
+            ease: "linear",
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export function HeroSection() {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden">
       
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/50 via-background to-background" />
-        <div className="absolute inset-0 filter blur-3xl">
-          <motion.div
-            className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent rounded-full opacity-10"
-            animate={{
-              y: [0, 20, 0],
-              x: [0, -10, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary rounded-full opacity-10"
-            animate={{
-              y: [0, -25, 0],
-              x: [0, 15, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-      </div>
+      <ParticleBackground />
 
       <motion.div
         className="z-10 flex flex-col items-center p-4"
