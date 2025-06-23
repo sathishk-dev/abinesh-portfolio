@@ -5,7 +5,6 @@ import { Typewriter } from "@/components/typewriter";
 import { ScrollIndicator } from "@/components/scroll-indicator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,13 +31,38 @@ const itemVariants = {
 export function HeroSection() {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-      <div className="absolute inset-0 bg-background -z-10">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-primary to-background opacity-50"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.3, scale: 1 }}
-          transition={{ duration: 2 }}
-        ></motion.div>
+      
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/50 via-background to-background" />
+        <div className="absolute inset-0 filter blur-3xl">
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent rounded-full opacity-10"
+            animate={{
+              y: [0, 20, 0],
+              x: [0, -10, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary rounded-full opacity-10"
+            animate={{
+              y: [0, -25, 0],
+              x: [0, 15, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+        </div>
       </div>
 
       <motion.div
@@ -66,8 +90,13 @@ export function HeroSection() {
             ]}
           />
         </motion.div>
-        <motion.div variants={itemVariants} className="mt-8">
-           <Button asChild size="lg">
+        <motion.div 
+            variants={itemVariants} 
+            className="mt-8"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+        >
+           <Button asChild size="lg" className="shadow-lg shadow-accent/20 hover:shadow-accent/30 transition-shadow duration-300">
               <Link href="#contact">
                 Get In Touch
               </Link>
