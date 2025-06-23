@@ -2,7 +2,7 @@
 
 This is a fully responsive, animated personal portfolio website for a Java Full Stack Developer, built with Next.js, Tailwind CSS, and Framer Motion.
 
-## Getting Started
+## Getting Startedadd
 
 First, install the dependencies:
 
