@@ -41,6 +41,8 @@ const ParticleBackground = () => {
         const startX = Math.random() * 100;
         const startY = 110; // Start below the viewport
         const endY = -10;   // End above the viewport
+        const startRotation = Math.random() * 360;
+        const endRotation = startRotation + (Math.random() - 0.5) * 180;
 
         return {
           id: i,
@@ -50,6 +52,8 @@ const ParticleBackground = () => {
           startX,
           startY,
           endY,
+          startRotation,
+          endRotation
         };
       });
       setParticles(newParticles);
@@ -80,6 +84,7 @@ const ParticleBackground = () => {
             opacity: [0, 1, 1, 0],
             borderRadius: ["10%", "50%", "10%"],
             scale: [1, 1.5, 1],
+            rotate: [p.startRotation, p.endRotation],
           }}
           transition={{
             duration: p.duration,
