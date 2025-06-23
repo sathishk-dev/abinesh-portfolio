@@ -32,7 +32,7 @@ const ParticleBackground = () => {
   const [particles, setParticles] = useState<any[]>([]);
 
   useEffect(() => {
-    // Generate particles only on the client-side
+    // Generate particles only on the client-side to prevent hydration mismatch
     const generateParticles = () => {
       const newParticles = Array.from({ length: 30 }).map((_, i) => {
         const size = Math.random() * 15 + 5;
@@ -58,8 +58,9 @@ const ParticleBackground = () => {
     generateParticles();
   }, []);
 
+  // Return a placeholder on the server and before particles are generated
   if (!particles.length) {
-    return <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden bg-background" />;
+    return <div className="absolute inset-0 -z-10 w-full h-full bg-background" />;
   }
 
   return (
@@ -75,7 +76,7 @@ const ParticleBackground = () => {
             top: `${p.startY}%`,
           }}
           animate={{
-            y: [`0%`, `${p.endY - p.startY}%`],
+            y: `${p.endY - p.startY}vh`, // Use viewport height for consistent animation
             opacity: [0, 1, 1, 0],
             borderRadius: ["10%", "50%", "10%"],
             scale: [1, 1.5, 1],
