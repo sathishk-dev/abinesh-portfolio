@@ -85,7 +85,7 @@ export function CustomCursor() {
         className="fixed top-0 left-0 w-2 h-2 rounded-full bg-accent pointer-events-none z-[9999]"
         variants={dotVariants}
         animate={isHovering ? 'hover' : 'default'}
-        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+        transition={{ type: 'spring', stiffness: 800, damping: 35 }}
       />
     </div>
   );
