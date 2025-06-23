@@ -40,7 +40,7 @@ const ParticleBackground = () => {
   useEffect(() => {
     // Generate particles only on the client-side to prevent hydration mismatch
     const generateParticles = () => {
-      const newParticles = Array.from({ length: 30 }).map((_, i) => {
+      const newParticles = Array.from({ length: 20 }).map((_, i) => {
         const size = Math.random() * 15 + 5;
         const duration = Math.random() * 15 + 10;
         const delay = Math.random() * duration;
@@ -87,7 +87,7 @@ const ParticleBackground = () => {
           }}
           animate={{
             y: `${p.endY - p.startY}vh`, // Use viewport height for consistent animation
-            opacity: [0, 1, 1, 0],
+            opacity: [0, 0.6, 0.6, 0],
             borderRadius: ["10%", "50%", "10%"],
             scale: [1, 1.5, 1],
             rotate: [p.startRotation, p.endRotation],
