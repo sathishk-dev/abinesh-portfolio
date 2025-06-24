@@ -17,10 +17,8 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    unoptimized: true,
   },
   reactStrictMode: true,
-  output: 'export',
 };
 
 export default nextConfig;
