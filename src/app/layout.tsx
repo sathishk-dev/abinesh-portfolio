@@ -13,8 +13,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Abinesh | Java Full Stack Developer",
-  description: "Personal portfolio of a Java Full Stack Developer.",
+  title: "Parisid | Professional Video Editor ",
+  description: "Personal portfolio of a video editor.",
 };
 
 export default function RootLayout({

@@ -52,11 +52,16 @@ export function AboutSection() {
 
           <MotionWrapper className="md:col-span-3" variants={staggerVariants}>
             <motion.p variants={itemVariants} className="text-muted-foreground mb-4">
-              I am a passionate and dedicated Java Full Stack Developer with a strong foundation in both front-end and back-end technologies. As a recent graduate, I am eager to apply my skills and knowledge to real-world projects and contribute to a dynamic team.
+
+           Creative and detail-oriented Video Editor with a passion for storytelling through visual media. Skilled in assembling raw footage into engaging content, enhancing video quality, and creating compelling narratives using editing software such as Adobe Premiere Pro, After Effects, and Experienced in editing for social media, YouTube, promotional videos, corporate content, and short films. Adept at color correction, sound design, motion graphics, and adapting videos to various formats and platforms. Strong ability to meet deadlines, collaborate with production teams, and respond to feedback with professionalism and creativity.
+
             </motion.p>
-            <motion.p variants={itemVariants} className="text-muted-foreground">
-              My journey into programming started with a fascination for building things, and it has grown into a career aspiration. I thrive on solving complex problems and am constantly learning to keep up with the latest industry trends. I am proficient in technologies like Java, Spring Boot, React, and SQL, and I am excited to build innovative and efficient web applications.
-            </motion.p>
+            {/* <motion.p variants={itemVariants} className="text-muted-foreground">
+
+          What sets me apart is my creative thinking—I don’t just edit clips together; I shape a narrative. I thrive on turning raw footage into visually engaging stories that leave a lasting impact.
+
+I’m currently open to video editing opportunities where I can bring my creativity and editing expertise to the table—whether it’s freelance, contract, or full-time work. Let’s make something amazing together
+            </motion.p> */}
           </MotionWrapper>
         </div>
 
@@ -64,9 +69,9 @@ export function AboutSection() {
         
         <MotionWrapper>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <AnimatedStat value={3} label="Years of Learning" />
-              <AnimatedStat value={10} label="Projects Completed" />
-              <AnimatedStat value={5} label="Core Technologies" />
+              <AnimatedStat value={1} label="Years of Learning" />
+              <AnimatedStat value={3} label="Projects Completed" />
+              <AnimatedStat value={3} label="Core Technologies" />
               <AnimatedStat value={2} label="Certifications" />
           </div>
         </MotionWrapper>

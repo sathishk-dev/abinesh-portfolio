@@ -2,17 +2,17 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 import { SkillChip } from "@/components/skill-chip";
 
 const skills = {
-  "Backend": [
-    "Java", "Spring Boot", "Spring MVC", "JPA/Hibernate", "REST APIs", "Microservices", "Spring Security"
+  "Premier Pro": [
+    "Cut & Trim","Sequence","Transition","Colour Grading","Audio Editing","Text & Title","VFX","Multicam Editing","Exporting"
   ],
-  "Frontend": [
-    "React", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"
+  // "Frontend": [
+  //   "React", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"
+  // ],
+  "After Effects": [
+    "Key frame & Animation","Masking & ROTO","Text Animation","Motion Graphics","3D-Cam","Effects","Tracking & Stabilization","VFX","Pre-com & Layer Management","Exporting"
   ],
-  "Databases": [
-    "MySQL", "PostgreSQL", "MongoDB", "H2 Database"
-  ],
-  "Tools & DevOps": [
-    "Git", "Docker", "Jenkins", "Maven", "Postman", "Jira", "Firebase"
+  "Photoshop": [
+    "Masking","Background Remove","Basics","Text","Layer Edit"
   ]
 };
 

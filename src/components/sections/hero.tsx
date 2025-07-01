@@ -5,7 +5,7 @@ import { Typewriter } from "@/components/typewriter";
 import { ScrollIndicator } from "@/components/scroll-indicator";
 import { MagicButton } from "@/components/ui/magic-button";
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -107,9 +107,9 @@ const ParticleBackground = () => {
 
 const leftSocials = [
     {
-      icon: <Github size={24} />,
+      icon: <Instagram size={24} />,
       href: "https://github.com",
-      label: "GitHub",
+      label: "Instagram",
     },
     {
       icon: <Linkedin size={24} />,
@@ -142,18 +142,18 @@ export function HeroSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground"
           variants={itemVariants}
         >
-          Abinesh K
+          Parisid S
         </motion.h1>
         <motion.h2 className="mt-2 text-xl md:text-2xl font-medium text-muted-foreground" variants={itemVariants}>
-          Java Full Stack Developer
+          Video Editor
         </motion.h2>
         <motion.div className="mt-6 text-lg md:text-xl text-accent" variants={itemVariants}>
           <Typewriter
             texts={[
-              "Building robust back-ends.",
-              "Crafting beautiful front-ends.",
-              "Solving complex problems.",
-              "Ready to innovate and learn.",
+              "Developmental Editing.",
+              "Copy Editing & Proofreading.",
+              "Content Structure & optimization.",
+  
             ]}
           />
         </motion.div>

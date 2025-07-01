@@ -9,24 +9,24 @@ import { motion } from "framer-motion";
 const timelineData = [
     {
       type: "Education",
-      title: "Bachelor of Technology in Computer Science",
-      institution: "University of Example Tech",
-      date: "2020 - 2024",
-      description: "Graduated with a focus on software development, database management, and web technologies. Completed several projects demonstrating proficiency in Java and related frameworks.",
+      title: "Video Editing",
+      institution: "Maxb Academy",
+      date: "2024",
+      description: "Completed a comprehensive video editing course covering tools like Adobe Premiere Pro and After Effects, focusing on professional editing techniques and visual storytelling.",
     },
     {
       type: "Internship",
-      title: "Software Developer Intern",
-      institution: "Innovate Solutions Inc.",
-      date: "Summer 2023",
-      description: "Contributed to a live project by developing REST APIs using Spring Boot and assisting the front-end team with React components. Gained practical experience in an Agile environment.",
+      title: "Video Editing",
+      institution: "Maxb Academy",
+      date: "Summer 2024",
+      description: "Completed a hands-on video editing course, gaining practical experience in editing, transitions, color grading, and audio syncing using industry-standard tools.",
     },
     {
       type: "Education",
-      title: "High School Diploma",
-      institution: "Example High School",
-      date: "2018 - 2020",
-      description: "Focused on Science and Mathematics, laying a strong analytical foundation for my engineering studies.",
+      title: "Bsc Chemistry ",
+      institution: "Bharath University",
+      date: "2022-2025",
+      description: "Studied core concepts of chemistry including organic, inorganic, and physical chemistry, with practical lab experience and project-based learning.",
     },
 ];
 
@@ -51,7 +51,7 @@ export function ResumeSection() {
 
         <MotionWrapper variants={slideInVariants}>
             <div className="mt-12 text-center">
-                <Link href="/resume.pdf" target="_blank" download passHref>
+                <Link href="/Parisid.pdf" target="_blank" download passHref>
                     <motion.div
                         className="relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
                         initial="rest"

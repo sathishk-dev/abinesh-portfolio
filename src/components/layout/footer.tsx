@@ -1,14 +1,14 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const socialLinks = [
   {
-    icon: <Github size={20} />,
-    href: "https://github.com",
-    label: "GitHub",
+    icon: <Instagram size={20} />,
+    href: "https://www.instagram.com/allwin_parisid?igsh=MWdwOHgzNjJpdW9oMQ%3D%3D&utm_source=qr",
+    label: "Instagram",
   },
   {
     icon: <Linkedin size={20} />,
@@ -17,7 +17,7 @@ const socialLinks = [
   },
   {
     icon: <Mail size={20} />,
-    href: "mailto:developer@example.com",
+    href: "allwindhoni715@gmail.com",
     label: "Email",
   },
 ];
@@ -29,7 +29,7 @@ export function Footer() {
     <footer className="bg-secondary text-secondary-foreground py-8">
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-muted-foreground text-center md:text-left">
-          © {new Date().getFullYear()} Abinesh. All Rights Reserved.
+          © {new Date().getFullYear()} Parisid. All Rights Reserved.
         </p>
         <div className="flex space-x-4">
           {socialLinks.map((link) => (

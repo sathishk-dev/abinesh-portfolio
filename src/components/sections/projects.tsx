@@ -3,12 +3,12 @@ import { ProjectCard } from "@/components/project-card";
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce website with product listings, a shopping cart, and a checkout system, built with Spring Boot and React.",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "e-commerce products",
-    tags: ["Java", "Spring Boot", "React", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "#",
+    title: "Retention Edit",
+    description: "Completed a practical video editing course specializing in short-form content and retention-focused editing.",
+    imageUrl: "/projects/a.png",
+    imageHint: "Project image",
+    tags: ["Masking","Audio Mix","Text","Motion Tracking","Green Screen","Key Frame","R"],
+    liveUrl: "https://www.instagram.com/reel/DLf7b-kzWP8/?igsh=MWg0Ymg2ZzhjbzZ3ZA==",
     githubUrl: "#",
   },
   {

@@ -49,7 +49,7 @@ export function Navbar() {
             className="text-3xl font-medium font-smooch text-foreground"
             whileHover={{ scale: 1.05 }}
           >
-            Abinesh
+            Parised
           </motion.div>
         </Link>
         <div className="hidden md:flex items-center space-x-2">
